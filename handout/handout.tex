@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+
+% aron ellipsis tenure example
+% viola plurals!
+% philipe disjunction scope
+% alan bale slides, metalinguistic negation
+
+\usepackage{tipa,linguex} % tipa must be loaded before linguex, not sure why
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage[normalem]{ulem}
+
+\usepackage{lineno}
+\usepackage{stmaryrd} % for llbracket/rrbracket
+%\usepackage{adjustbox}
+%\usepackage{array}
+% \usepackage{setspace}
+%\usepackage{amssymb}
+%\usepackage{tikz-qtree}
+
+%\def\strikeout#1{\setbox1\hbox{#1}\leavevmode
+%\hbox to 0pt{\rule[.5ex]{\wd1}{.6pt}\hskip -\wd1}\usebox1}
+
+%\widowpenalty10000
+%\clubpenalty10000
+%\interfootnotelinepenalty=10000
+%\usepackage{mathptmx,natbib}	
+%\usepackage{color}
+%\usepackage{mathrsfs}
+%\usepackage{pifont, soul, graphicx, setspace, amssymb, mdframed, multicol}
+
+\usepackage{mathpazo}
+\usepackage[margin=2.5cm]{geometry}
+
+%\usepackage[applemac]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[ngerman]{babel}
+	
+
+%
+\newcommand{\deno}[1]{$\llbracket${#1}$\rrbracket$}
+\newcommand{\fc}[1]{{\underline{#1}}}
+\newcommand{\dom}[1]{$\ulcorner${#1}$\urcorner$}
+\newcommand{\ul}{$\ulcorner$}
+\newcommand{\ur}{$\urcorner$}
+
+\newcommand{\tpa}{\textipa} %shorthand
+\newcommand{\pp}{$\mid\mid$\hspace{0.2em}}
+\newcommand{\ppp}{$\mid\mid\mid$\hspace{0.2em}}
+\newcommand{\p}{$\mid$\hspace{0.2em}}
+
+
+\newcommand{\bs}{\textbackslash}
+
+% defunct:
+\newcommand*\tbox[1]{\fbox{\parbox{\dimexpr\textwidth\fboxsep\fboxrule\relax}{\vspace{1.5\baselineskip}\hspace{1ex}#1\vspace{1.5\baselineskip}}}}
+
+% not ideal:
+\newcommand*\ttbox[1]{
+%
+\ \\
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        #1
+    }%
+}
+\ \\
+%
+}
+
+
+%
+\sloppy
+
+%\renewcommand*\contentsname{}
+\begin{document}
+
+\title{Toward an Alternative(s) Syntax}
+\author{Michael Wagner}
+\date{}
+\maketitle        
+
+\ex.  
+
+% \includegraphics[width=0.38\textwidth]{phocus2.png}
+
+\ttbox{
+\bf Key assumption in alternative semantics: F signals substitution site for semantic alternatives
+}
+
+%\small
+\newpage
+\bibliographystyle{myapalike}
+\bibliography{03all}
+
+\end{document}

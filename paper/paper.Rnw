@@ -1,0 +1,151 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+
+%%%% main text
+% 
+
+\documentclass[man,natbib,floatsintext]{apa6}
+% Use the lineno option to display guide line numbers if required.
+
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[]{natbib,linguex,hyperref,tipa}
+
+
+\title{Two-dimensional parsing of the acoustic stream explains the iambic-trochaic law}
+\shorttitle{Two-dimensional parsing and the ITL} 
+
+\author{Michael Wagner}
+\affiliation{McGill University}
+
+
+\authornote{
+To appear in {\em Psychological Review}. \textcopyright\ 2021, American Psychological Association. This paper is not the copy of record and may not exactly replicate the final, authoritative version of the article. Please do not copy or cite without authors' permission. The final article will be available, upon publication, via its DOI:  \href{10.1037/rev0000302}{https://doi.org/10.1037/rev0000302}.  The preprint along with the stimuli, data, and code of the project are available on the OSF project page: \href{http://doi.org/10.17605/OSF.IO/RWBYH}{http://doi.org/10.17605/OSF.IO/RWBYH} \citep{wagner21osfitl}.
+}
+
+\abstract{
+In a sequence of otherwise equal sounds, listeners tend to hear a series of trochees (groups of two sounds with an initial beat) when every other sound is louder; they tend to hear a series of iambs (groups of two sounds with a final beat) when every other sound is longer. 
+The paper presents evidence that this so-called `Iambic-Trochaic Law' (ITL) is a consequence of the way listeners parse the signal along two orthogonal dimensions, grouping ({\em Which tone is first/last?}) and prominence ({\em Which tone is prominent?}). 
+A production experiment shows that in speech, intensity and duration correlate when encoding prominence, but anticorrelate when encoding grouping. 
+A model of the production data shows that the ITL emerges from the cue distribution based on a listener's predicted decisions about prominence and grouping respectively. 
+This, and further predictions derived from the model, are then tested in speech and tone perception. 
+The perception results provide evidence that intensity and duration are excellent cues for grouping and prominence, but poor cues for the distinction between iamb and trochee per se. 
+Overall, the findings illustrate how the ITL derives from the way listeners recover two orthogonal perceptual dimensions, grouping and prominence, from a single acoustic stream.
+}
+
+\keywords{perception; rhythm; prominence; grouping; speech; speech segmentation}
+
+
+\begin{document}
+
+%\SweaveOpts{concordance=TRUE}
+
+<<setup, include=FALSE, cache=FALSE>>=
+
+# setwd("/Users/chael/Dropbox/work_sync/submit/88_itl/15_proof_edits/revision")
+
+# set global chunk options
+opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE,include=FALSE,cache=FALSE,results='asis')
+#theme_update(plot.title = element_text(hjust = 0.5))
+figureFontSize=16
+					
+library(knitr)
+library(scales)
+library(ggplot2)
+library(tidyverse)
+library(lme4)
+library(languageR)
+library(reshape)
+library(scales)
+library(texreg)
+library(car)
+library(grid)
+library(gridExtra)
+library(xtable)
+library(brms)
+library(lmerTest)
+library(viridis)
+library(ica)
+
+options(dplyr.summarise.inform = FALSE)
+@
+
+<<loadData, include=FALSE, cache=FALSE>>=
+
+# source command calling r code
+@
+
+
+\maketitle
+
+\section{Prominence, grouping, and the Iambic-Trochaic Law}
+
+Table\ \ref{tableoffour}.
+
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{l|lll}
+                     & \em Even tone last \hspace{2em}    & \em Odd  tone last\\\hline
+\em Even tone prominent  & (x X) (x X) (x X) \ldots   & x) (X x) (X x) (X\ldots \\ 
+\em Odd tone prominent   & (X x) (X x) (X x) \ldots   & X) (x X) (x X) (x\ldots \\
+\end{tabular}
+\end{center}
+
+\caption{Four ways to perceive a sequence of sounds as a sequence of groups of two sounds, depending on the dimension of grouping (\textit{Which sound is first/last?|}) and prominence  (\textit{Which sound is more prominent?}). 
+The top left and bottom right sequences are sequences of iambs, the bottom left and top right ones are sequences of trochees.}
+\label{tableoffour}
+\end{table}
+
+
+
+\subsection{Results}
+
+\begin{figure}[t!]
+\centering
+<<productionPlot, include=T,out.width='0.49\\linewidth', fig.show='hold',fig.height=5>>=
+# ggplot(proData, 
+#   aes(x=SyllablePosition, y=maxIntensity)) +  
+#   geom_boxplot()  + 
+#   geom_jitter(alpha=0.1) +
+#   xlab('') + 
+#   ylab('Intensity (dB)') +
+#   theme_bw(base_size = figureFontSize)  +
+#   facet_grid(~Stress, scales = "fixed") +
+#   ggtitle('Intensity') +
+#   theme(plot.title = element_text(hjust = 0.5))
+#  
+# ggplot(proData, 
+#   aes(x=SyllablePosition, y=duration)) +  
+#   geom_boxplot()  + 
+#   geom_jitter(alpha=0.1) +
+#   xlab('') +
+#   ylab('Duration (sec on log scale)') +
+#   coord_trans(y = "log10") +
+#   theme_bw(base_size =  figureFontSize) +
+#   facet_grid(~Stress, scales = "fixed") +
+#   ggtitle('Duration') +
+#   theme(plot.title = element_text(hjust = 0.5))
+
+@
+\caption{Duration (sec on log scale) and intensity (dB) of each syllable within the disyllabic words, depending on whether they have initial stress (trochees) or final stress (iambs).}
+\label{fig:production}
+\end{figure}
+
+
+
+\section{General Discussion}
+
+A listener's perception  of an  acoustic signal reflects an attempt of the perceptual system to find a plausible `auditory description' for the signal \citep{bregm81}. 
+Similar to the phenomenon of auditory streaming, and other situations in which  an  auditory scene is composed from multiple sources  \citep{bregm71,bregm77, bregm90}, the results suggest that listeners attribute the properties of the incoming acoustic signal to two separate causes. 
+The decisions about prominence and grouping are similar to certain decisions in the visual domain, for example the decisions about the size and distance of an object, or the decisions about the color of an object and the hue of the background light. 
+In each of these cases, there are two mutually constraining perceptual decisions at play explaining the same or at least overlapping cues. 
+
+
+% Bibliography
+\bibliography{citations}
+\end{document}
