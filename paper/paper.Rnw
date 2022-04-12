@@ -8,6 +8,9 @@
 \documentclass[man,natbib,floatsintext]{apa6}
 % Use the lineno option to display guide line numbers if required.
 
+% to include dummy text
+\usepackage{lipsum}
+
 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -25,17 +28,11 @@
 
 
 \authornote{
-To appear in {\em Psychological Review}. \textcopyright\ 2021, American Psychological Association. This paper is not the copy of record and may not exactly replicate the final, authoritative version of the article. Please do not copy or cite without authors' permission. The final article will be available, upon publication, via its DOI:  \href{10.1037/rev0000302}{https://doi.org/10.1037/rev0000302}.  The preprint along with the stimuli, data, and code of the project are available on the OSF project page: \href{http://doi.org/10.17605/OSF.IO/RWBYH}{http://doi.org/10.17605/OSF.IO/RWBYH} \citep{wagner21osfitl}.
+\lipsum[1]
 }
 
 \abstract{
-In a sequence of otherwise equal sounds, listeners tend to hear a series of trochees (groups of two sounds with an initial beat) when every other sound is louder; they tend to hear a series of iambs (groups of two sounds with a final beat) when every other sound is longer. 
-The paper presents evidence that this so-called `Iambic-Trochaic Law' (ITL) is a consequence of the way listeners parse the signal along two orthogonal dimensions, grouping ({\em Which tone is first/last?}) and prominence ({\em Which tone is prominent?}). 
-A production experiment shows that in speech, intensity and duration correlate when encoding prominence, but anticorrelate when encoding grouping. 
-A model of the production data shows that the ITL emerges from the cue distribution based on a listener's predicted decisions about prominence and grouping respectively. 
-This, and further predictions derived from the model, are then tested in speech and tone perception. 
-The perception results provide evidence that intensity and duration are excellent cues for grouping and prominence, but poor cues for the distinction between iamb and trochee per se. 
-Overall, the findings illustrate how the ITL derives from the way listeners recover two orthogonal perceptual dimensions, grouping and prominence, from a single acoustic stream.
+\lipsum[2]
 }
 
 \keywords{perception; rhythm; prominence; grouping; speech; speech segmentation}
@@ -54,20 +51,18 @@ opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE,include=FALSE,cache=FALS
 #theme_update(plot.title = element_text(hjust = 0.5))
 figureFontSize=16
 					
+# load packages here
 library(knitr)
 library(scales)
 library(ggplot2)
 library(tidyverse)
 library(lme4)
-library(languageR)
-library(reshape)
 library(scales)
 library(texreg)
 library(car)
 library(grid)
 library(gridExtra)
 library(xtable)
-library(brms)
 library(lmerTest)
 library(viridis)
 library(ica)
