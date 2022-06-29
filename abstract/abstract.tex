@@ -35,7 +35,8 @@
 %\usepackage{newpxtext,newpxmath}
 
 % linguistics
-\usepackage{linguex,tipa,natbib}
+% tipa must be loaded before linguex (not sure why)
+\usepackage{tipa,linguex,natbib}
 
 % strikethrough
 \usepackage[normalem]{ulem}
@@ -93,7 +94,13 @@
 \bf Title
 \end{center}
 
-\noindent  \lipsum[2-4]
+ \lipsum[1]
+
+\ex. test
+\a. test
+\b. test
+
+\noindent  \lipsum[2-3]
 
 
 

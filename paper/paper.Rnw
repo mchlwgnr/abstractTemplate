@@ -2,6 +2,36 @@
 %!TEX encoding = UTF-8 Unicode
 
 
+<<setup, include=FALSE, cache=FALSE>>=
+
+# setwd("/Users/chael/Dropbox/work_sync/submit/88_itl/15_proof_edits/revision")
+
+# set global chunk options
+opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE,include=FALSE,cache=FALSE,results='asis')
+#theme_update(plot.title = element_text(hjust = 0.5))
+figureFontSize=16
+					
+# load packages here
+library(knitr)
+library(scales)
+library(ggplot2)
+library(tidyverse)
+library(lme4)
+library(scales)
+library(texreg)
+library(car)
+library(grid)
+library(gridExtra)
+library(xtable)
+library(lmerTest)
+library(viridis)
+library(ica)
+library(patchwork) # simpler plot arrangement
+
+options(dplyr.summarise.inform = FALSE)
+@
+
+
 %%%% main text
 % 
 
@@ -40,40 +70,9 @@
 
 \begin{document}
 
-%\SweaveOpts{concordance=TRUE}
 
-<<setup, include=FALSE, cache=FALSE>>=
 
-# setwd("/Users/chael/Dropbox/work_sync/submit/88_itl/15_proof_edits/revision")
 
-# set global chunk options
-opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE,include=FALSE,cache=FALSE,results='asis')
-#theme_update(plot.title = element_text(hjust = 0.5))
-figureFontSize=16
-					
-# load packages here
-library(knitr)
-library(scales)
-library(ggplot2)
-library(tidyverse)
-library(lme4)
-library(scales)
-library(texreg)
-library(car)
-library(grid)
-library(gridExtra)
-library(xtable)
-library(lmerTest)
-library(viridis)
-library(ica)
-
-options(dplyr.summarise.inform = FALSE)
-@
-
-<<loadData, include=FALSE, cache=FALSE>>=
-
-# source command calling r code
-@
 
 
 \maketitle
@@ -103,7 +102,7 @@ The top left and bottom right sequences are sequences of iambs, the bottom left 
 \begin{figure}[t!]
 \centering
 <<productionPlot, include=T,out.width='0.49\\linewidth', fig.show='hold',fig.height=5>>=
-# ggplot(proData, 
+# plot1 = ggplot(proData, 
 #   aes(x=SyllablePosition, y=maxIntensity)) +  
 #   geom_boxplot()  + 
 #   geom_jitter(alpha=0.1) +
@@ -114,7 +113,7 @@ The top left and bottom right sequences are sequences of iambs, the bottom left 
 #   ggtitle('Intensity') +
 #   theme(plot.title = element_text(hjust = 0.5))
 #  
-# ggplot(proData, 
+# plot2 ggplot(proData, 
 #   aes(x=SyllablePosition, y=duration)) +  
 #   geom_boxplot()  + 
 #   geom_jitter(alpha=0.1) +
@@ -125,6 +124,8 @@ The top left and bottom right sequences are sequences of iambs, the bottom left 
 #   facet_grid(~Stress, scales = "fixed") +
 #   ggtitle('Duration') +
 #   theme(plot.title = element_text(hjust = 0.5))
+
+# plot1 + plot2
 
 @
 \caption{Duration (sec on log scale) and intensity (dB) of each syllable within the disyllabic words, depending on whether they have initial stress (trochees) or final stress (iambs).}
