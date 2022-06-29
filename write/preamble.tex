@@ -1,9 +1,6 @@
-\documentclass[12pt]{article}
 
-
-% margins
-\usepackage[top=2.54cm,bottom=2.54cm,right=2.54cm,left=2.54cm]{geometry}
-
+% dummy text for templates
+\usepackage{lipsum} 
 
 %
 \usepackage{graphicx}
@@ -13,11 +10,23 @@
 \usepackage[utf8x]{inputenc}
 
 
-% dummy text
-\usepackage{lipsum} 
+% strikethrough
+\usepackage[normalem]{ulem}
+%\sout{Hello World}
+
+
+% todo items
+\usepackage[colorinlistoftodos]{todonotes}
+
+% linguistics
+% tipa must be loaded before linguex (not sure why)
+\usepackage{tipa,linguex}
+\usepackage{natbib}
+
+% \usepackage{lineno}
+
 
 %%% Fonts (comment out fonts you don't want to use)
-%
 % use mathpazo font (fonts suitable for typesetting mathematics in combination with the Palatino family of text fonts):
 %\usepackage{mathpazo} %either use this, or the following: 
 \usepackage{newpxtext,newpxmath} % small caps might not look good: https://tex.stackexchange.com/questions/504366/how-to-use-palatino-font-for-text-and-what-about-maths
@@ -31,16 +40,13 @@
 
 % special characters
 \usepackage{amsmath,amssymb} %  math symbols, not sure whether crucial
-\usepackage{stmaryrd} % what for?
+\usepackage{stmaryrd} % for llbracket/rrbracket
 %\usepackage{newpxtext,newpxmath}
+% \usepackage{setspace}
+%\usepackage{amssymb}
+%\usepackage{tikz-qtree}
 
-% linguistics
-% tipa must be loaded before linguex (not sure why)
-\usepackage{tipa,linguex,natbib}
 
-% strikethrough
-\usepackage[normalem]{ulem}
-%\sout{Hello World}
 
 %
 \usepackage{hyperref}
@@ -73,6 +79,8 @@
 %
 \sloppy
 
+\newcommand{\bs}{\textbackslash}
+
 % ------------
 
 \usepackage{multimedia}
@@ -86,27 +94,3 @@
 %
 \newcommand{\wavlink}[2]{\movie{#1}{#2}}
 
-
-
-\begin{document}
-
-\begin{center}
-\bf Title
-\end{center}
-
- \lipsum[1]
-
-\ex. test
-\a. test
-\b. test
-
-\noindent  \lipsum[2-3]
-
-
-
-
-
-\bibliographystyle{apalike}
-\bibliography{03all}
-
-\end{document}

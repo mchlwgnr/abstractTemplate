@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+
+
+% packages and commands shared with other templates
+\input{preamble.tex}
+
+\usepackage[margin=2.5cm]{geometry}
+
+
+% not ideal way to create boxes:
+\newcommand*\ttbox[1]{
+%
+\ \\
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        #1
+    }%
+}
+\ \\
+%
+}
+
+
+%
+\sloppy
+
+%\renewcommand*\contentsname{}
+\begin{document}
+
+\title{Toward an Alternative(s) Syntax}
+\author{Michael Wagner}
+\date{}
+\maketitle        
+
+\ex.  
+
+% \includegraphics[width=0.38\textwidth]{phocus2.png}
+
+\ttbox{
+\bf Key assumption in alternative semantics: F signals substitution site for semantic alternatives
+}
+
+%\small
+\newpage
+\bibliographystyle{myapalike}
+\bibliography{03all}
+
+\end{document}
