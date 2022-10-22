@@ -1,0 +1,129 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+%%%% main text
+
+\documentclass[man,natbib,floatsintext]{apa6}
+
+\usepackage[]{graphicx}
+\usepackage[]{color}
+
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+%\makeatletter
+%\def\maxwidth{ %
+%  \ifdim\Gin@nat@width>\linewidth
+%    \linewidth
+%  \else
+%    \Gin@nat@width
+%  \fi
+%}
+%\makeatother
+%
+%\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+%\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+%\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+%\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+%\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+%\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+%\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+%\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+%\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+%\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+%\let\hlipl\hlkwb
+%
+%\usepackage{framed}
+%\makeatletter
+%\newenvironment{kframe}{%
+% \def\at@end@of@kframe{}%
+% \ifinner\ifhmode%
+%  \def\at@end@of@kframe{\end{minipage}}%
+%  \begin{minipage}{\columnwidth}%
+% \fi\fi%
+% \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+% \colorbox{shadecolor}{##1}\hskip-\fboxsep
+%     % There is no \\@totalrightmargin, so:
+%     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+% \MakeFramed {\advance\hsize-\width
+%   \@totalleftmargin\z@ \linewidth\hsize
+%   \@setminipage}}%
+% {\par\unskip\endMakeFramed%
+% \at@end@of@kframe}
+%\makeatother
+%
+%\definecolor{shadecolor}{rgb}{.97, .97, .97}
+%\definecolor{messagecolor}{rgb}{0, 0, 0}
+%\definecolor{warningcolor}{rgb}{1, 0, 1}
+%\definecolor{errorcolor}{rgb}{1, 0, 0}
+%\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+% Use the lineno option to display guide line numbers if required.
+
+% load packages and define commands
+\input{preamble.tex}
+
+\title{Two-dimensional parsing of the acoustic stream explains the iambic-trochaic law}
+\shorttitle{Two-dimensional parsing and the ITL} 
+
+\author{Michael Wagner}
+\affiliation{McGill University}
+
+
+\authornote{
+\lipsum[1]
+}
+
+\abstract{
+\lipsum[2]
+}
+
+\keywords{perception; rhythm; prominence; grouping; speech; speech segmentation}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+
+
+\maketitle
+
+\section{Prominence, grouping, and the Iambic-Trochaic Law}
+
+Table\ \ref{tableoffour}.
+
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{l|lll}
+                     & \em Even tone last \hspace{2em}    & \em Odd  tone last\\\hline
+\em Even tone prominent  & (x X) (x X) (x X) \ldots   & x) (X x) (X x) (X\ldots \\ 
+\em Odd tone prominent   & (X x) (X x) (X x) \ldots   & X) (x X) (x X) (x\ldots \\
+\end{tabular}
+\end{center}
+
+\caption{Four ways to perceive a sequence of sounds as a sequence of groups of two sounds, depending on the dimension of grouping (\textit{Which sound is first/last?|}) and prominence  (\textit{Which sound is more prominent?}). 
+The top left and bottom right sequences are sequences of iambs, the bottom left and top right ones are sequences of trochees.}
+\label{tableoffour}
+\end{table}
+
+
+\subsection{Results}
+
+\begin{figure}[t!]
+\centering
+
+\caption{Duration (sec on log scale) and intensity (dB) of each syllable within the disyllabic words, depending on whether they have initial stress (trochees) or final stress (iambs).}
+\label{fig:production}
+\end{figure}
+
+
+
+\section{General Discussion}
+
+A listener's perception  of an  acoustic signal reflects an attempt of the perceptual system to find a plausible `auditory description' for the signal \citep{bregm81}. 
+Similar to the phenomenon of auditory streaming, and other situations in which  an  auditory scene is composed from multiple sources  \citep{bregm71,bregm77, bregm90}, the results suggest that listeners attribute the properties of the incoming acoustic signal to two separate causes. 
+The decisions about prominence and grouping are similar to certain decisions in the visual domain, for example the decisions about the size and distance of an object, or the decisions about the color of an object and the hue of the background light. 
+In each of these cases, there are two mutually constraining perceptual decisions at play explaining the same or at least overlapping cues. 
+
+
+% Bibliography
+\bibliography{citations}
+\end{document}

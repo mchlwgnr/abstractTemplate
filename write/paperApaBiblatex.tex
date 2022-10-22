@@ -1,0 +1,76 @@
+% !BIB TS-program = biber
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+
+\documentclass[]{article}
+
+\usepackage[backend=biber, style=authoryear-comp, sortcites=false, maxcitenames=2, mincitenames=1, maxbibnames=4, uniquelist=false,natbib=true]{biblatex}
+%
+\addbibresource{citations.bib}
+
+
+% load packages and define commands
+\input{preamble.tex}
+
+\title{Two-dimensional parsing of the acoustic stream explains the iambic-trochaic law}
+%\shorttitle{Two-dimensional parsing and the ITL} 
+
+\author{Michael Wagner}
+%\affiliation{McGill University}
+
+
+%\authornote{
+%\lipsum[1]
+%}
+%
+%\abstract{
+%\lipsum[2]
+%}
+%
+%\keywords{perception; rhythm; prominence; grouping; speech; speech segmentation}
+%\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+\begin{document}
+
+\maketitle
+
+\section{Prominence, grouping, and the Iambic-Trochaic Law}
+
+Table\ \ref{tableoffour}.
+
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{l|lll}
+                     & \em Even tone last \hspace{2em}    & \em Odd  tone last\\\hline
+\em Even tone prominent  & (x X) (x X) (x X) \ldots   & x) (X x) (X x) (X\ldots \\ 
+\em Odd tone prominent   & (X x) (X x) (X x) \ldots   & X) (x X) (x X) (x\ldots \\
+\end{tabular}
+\end{center}
+
+\caption{Four ways to perceive a sequence of sounds as a sequence of groups of two sounds, depending on the dimension of grouping (\textit{Which sound is first/last?|}) and prominence  (\textit{Which sound is more prominent?}). 
+The top left and bottom right sequences are sequences of iambs, the bottom left and top right ones are sequences of trochees.}
+\label{tableoffour}
+\end{table}
+
+
+\subsection{Results}
+
+\begin{figure}[t!]
+\centering
+
+\caption{Duration (sec on log scale) and intensity (dB) of each syllable within the disyllabic words, depending on whether they have initial stress (trochees) or final stress (iambs).}
+\label{fig:production}
+\end{figure}
+
+
+
+\section{General Discussion}
+
+A listener's perception  of an  acoustic signal reflects an attempt of the perceptual system to find a plausible `auditory description' for the signal \citep{bregm81}. 
+Similar to the phenomenon of auditory streaming, and other situations in which  an  auditory scene is composed from multiple sources  \citep{bregm71,bregm77, bregm90}, the results suggest that listeners attribute the properties of the incoming acoustic signal to two separate causes. 
+The decisions about prominence and grouping are similar to certain decisions in the visual domain, for example the decisions about the size and distance of an object, or the decisions about the color of an object and the hue of the background light. 
+In each of these cases, there are two mutually constraining perceptual decisions at play explaining the same or at least overlapping cues. 
+
+
+\end{document}

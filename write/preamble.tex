@@ -1,4 +1,9 @@
 
+% load natib only if not biblatex
+\makeatletter
+\@ifpackageloaded{biblatex}{}{\usepackage{natbib}}
+\makeatother
+
 % dummy text for templates
 \usepackage{lipsum} 
 
@@ -9,6 +14,16 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 
+\usepackage[]{graphicx}
+\usepackage[]{color}
+
+\usepackage{alltt}
+% Use the lineno option to display guide line numbers if required.
+
+%\AtBeginDocument{
+%\@ifpackageloaded{inputenc}{}{\usepackage[utf8x]{inputenc}}
+%\@ifpackageloaded{babel}{}{\usepackage[english]{babel}}
+%}{}
 
 % strikethrough
 \usepackage[normalem]{ulem}
@@ -21,7 +36,8 @@
 % linguistics
 % tipa must be loaded before linguex (not sure why)
 \usepackage{tipa,linguex}
-\usepackage{natbib}
+
+
 
 % \usepackage{lineno}
 
@@ -40,14 +56,14 @@
 % \usepackage{mathptmx}
 
 % special characters
-\usepackage{amsmath,amssymb} %  math symbols, not sure whether crucial
+\usepackage{amsmath} %  math symbols, not sure whether crucial
+%\usepackage{amssymb creates conflit
 \usepackage{stmaryrd} % for llbracket/rrbracket
+
+
 %\usepackage{newpxtext,newpxmath}
 % \usepackage{setspace}
-%\usepackage{amssymb}
 %\usepackage{tikz-qtree}
-
-
 
 %
 \usepackage{hyperref}
